@@ -15,7 +15,9 @@ router.get('/allpost', (req, res) => {
         })
 });
 
-
+router.get('/createpost', requireLogin, (req, res) => {
+    res.send("CreatePost route");
+});
 router.post('/createpost', requireLogin, (req, res) => {
     const { title, body } = req.body;
     if (!title || !body) {

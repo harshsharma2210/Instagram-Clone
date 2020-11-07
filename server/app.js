@@ -15,7 +15,7 @@ mongoose.connection.on('connected', () => {
     console.log("Database Connected");
 });
 mongoose.connection.on('error', () => {
-    console.log("ERROR" + error);
+    console.log("ERROR" );
 });
 
 app.use(express.json());
