@@ -9,9 +9,6 @@ const bcrypt = require('bcryptjs');
 const jwt=require('jsonwebtoken');
 const requireLogin=require('../middleware/requiredLogin');
 
-router.get('/', (req, res) => {
-    res.send("hello");
-});
 
 router.post('/signup', (req, res) => {
     const { name, email, password } = req.body;
@@ -60,7 +57,8 @@ router.post('/signin', (req, res) => {
                 .then(doMatch => {
                     if (doMatch) {
                        const token=jwt.sign({_id:savedUser._id},JWT_SECRET);
-                       res.json({token});
+                       const {_id,name,email}=savedUser;
+                       res.json({token,user:{_id,name,email}});
 
                     }
                     else {

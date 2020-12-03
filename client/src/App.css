@@ -17,7 +17,11 @@ h2 {
   margin: 10px auto;
 }
 /* label underline focus color */
-.input-field input[type="text"]:focus {
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid rgb(37, 0, 250) !important;
+  box-shadow: 0 1px 0 0 rgb(37, 0, 250) !important;
+}
+.input-field input[type=password]:focus {
   border-bottom: 1px solid rgb(37, 0, 250) !important;
   box-shadow: 0 1px 0 0 rgb(37, 0, 250) !important;
 }
@@ -36,4 +40,10 @@ h2 {
   max-width: 500px;
   height: max-content;
   margin: 26px auto;
+}
+
+#toast-container {
+  top: 30px !important;
+  right: 20px !important;
+  left: auto !important;
 }
