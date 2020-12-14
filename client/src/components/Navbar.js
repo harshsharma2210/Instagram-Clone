@@ -12,6 +12,7 @@ const Navbar = () => {
             return [
                 <li><Link to="/profile">Profile</Link></li>,
                 <li><Link to="/create">Create Posts</Link></li>,
+                <li><Link to="/myfollowingpost">My following Posts</Link></li>,
                 <li>      <button className="btn #c62828 red darken-3"
                 onClick={() =>{
                     localStorage.clear();

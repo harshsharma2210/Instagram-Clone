@@ -7,7 +7,7 @@ const Home = () => {
     // eslint-disable-next-line no-unused-vars
     const { state, dispatch } = useContext(UserContext);
     useEffect(() => {
-        fetch('/allpost', {
+        fetch('/getsubpost', {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
             }

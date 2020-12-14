@@ -9,21 +9,22 @@ const mongoose = require('mongoose');
 
 // DATABASE
 mongoose.connect(process.env.MONGOURI, {
-    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
+    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 });
 mongoose.connection.on('connected', () => {
     console.log("Database Connected");
 });
 mongoose.connection.on('error', () => {
-    console.log("ERROR" );
+    console.log("ERROR");
 });
 
 app.use(express.json());
 require('./models/user');
 require('./models/post');
 
-app.use(require('./routes/post'));
+app.use(require('./routes/post')); 
 app.use(require('./routes/auth'));
+app.use(require('./routes/user'));
 
 
 app.listen(serverPort, () => {
