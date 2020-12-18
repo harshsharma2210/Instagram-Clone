@@ -17,6 +17,7 @@ export const UserContext = createContext()
 
 const Routing = ()=>{
   const history = useHistory()
+  // eslint-disable-next-line no-unused-vars
   const {state,dispatch} = useContext(UserContext)
   useEffect(()=>{
     const user = JSON.parse(localStorage.getItem("user"))
@@ -26,6 +27,7 @@ const Routing = ()=>{
       if(!history.location.pathname.startsWith('/reset'))
            history.push('/signin')
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return(
     <Switch>

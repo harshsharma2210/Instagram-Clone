@@ -52,6 +52,7 @@ const Profile  = ()=>{
             console.log(err)
         })
        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[image])
     const updatePhoto = (file)=>{
         setImage(file)
@@ -72,7 +73,7 @@ const Profile  = ()=>{
                <div>
                    <img style={{width:"160px",height:"160px",borderRadius:"80px"}}
                    src={state?state.pic:"loading"}
-                   />
+                   alt="pic"/>
                  
                </div>
                <div>

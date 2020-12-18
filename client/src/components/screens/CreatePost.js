@@ -34,6 +34,7 @@ const CretePost = ()=>{
             console.log(err)
         })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[url])
   
    const postDetails = ()=>{

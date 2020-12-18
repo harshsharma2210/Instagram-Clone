@@ -3,6 +3,7 @@ import {UserContext} from '../../App'
 import {Link} from 'react-router-dom'
 const Home  = ()=>{
     const [data,setData] = useState([])
+    // eslint-disable-next-line no-unused-vars
     const {state,dispatch} = useContext(UserContext)
     useEffect(()=>{
        fetch('/allpost',{
@@ -30,7 +31,7 @@ const Home  = ()=>{
           .then(result=>{
                    //   console.log(result)
             const newData = data.map(item=>{
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }else{
                     return item
@@ -55,7 +56,7 @@ const Home  = ()=>{
           .then(result=>{
             //   console.log(result)
             const newData = data.map(item=>{
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }else{
                     return item
@@ -82,7 +83,7 @@ const Home  = ()=>{
           .then(result=>{
               console.log(result)
               const newData = data.map(item=>{
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }else{
                     return item
@@ -115,7 +116,7 @@ const Home  = ()=>{
                data.map(item=>{
                    return(
                        <div className="card home-card" key={item._id}>
-                            <h5 style={{padding:"5px"}}><Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }>{item.postedBy.name}</Link> {item.postedBy._id == state._id 
+                            <h5 style={{padding:"5px"}}><Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }>{item.postedBy.name}</Link> {item.postedBy._id === state._id 
                             && <i className="material-icons" style={{
                                 float:"right"
                             }} 
@@ -124,7 +125,7 @@ const Home  = ()=>{
 
                             }</h5>
                             <div className="card-image">
-                                <img src={item.photo}/>
+                                <img src={item.photo}  alt="Profile Pic"/>
                             </div>
                             <div className="card-content">
                             <i className="material-icons" style={{color:"red"}}>favorite</i>

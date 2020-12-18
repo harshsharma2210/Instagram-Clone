@@ -18,6 +18,7 @@ const Profile  = ()=>{
          
             setProfile(result)
        })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
 
@@ -65,7 +66,7 @@ const Profile  = ()=>{
              localStorage.setItem("user",JSON.stringify(data))
             
              setProfile((prevState)=>{
-                const newFollower = prevState.user.followers.filter(item=>item != data._id )
+                const newFollower = prevState.user.followers.filter(item=>item !== data._id )
                  return {
                      ...prevState,
                      user:{
@@ -90,7 +91,7 @@ const Profile  = ()=>{
            }}>
                <div>
                    <img style={{width:"160px",height:"160px",borderRadius:"80px"}}
-                   src={userProfile.user.pic}
+                   src={userProfile.user.pic} alt="pic"
                    />
                </div>
                <div>
