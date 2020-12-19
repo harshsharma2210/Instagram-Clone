@@ -17,7 +17,7 @@ const SignIn  = ()=>{
     const uploadPic = ()=>{
         const data = new FormData()
         data.append("file",image)
-        data.append("upload_preset","new-insta")
+        data.append("upload_preset","insta-clone")
         data.append("cloud_name","dggwrslgs")
         fetch("https://api.cloudinary.com/v1_1/dggwrslgs/image/upload",{
             method:"post",
